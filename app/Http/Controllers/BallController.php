@@ -18,4 +18,8 @@ class BallController extends Controller
        $task1= ball::where('id','=',$y)->delete();
        if($task1)    { return ball::all();   }
     }
+    public function getrecordbyid(Request $request)  
+    {  $y=$request->input('x');
+       return ball::where('id','=',$y)->get();
+    }
 }
