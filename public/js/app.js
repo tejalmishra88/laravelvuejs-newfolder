@@ -14319,8 +14319,11 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 var sample = __webpack_require__(43);
 var task = __webpack_require__(49);
 var task1 = __webpack_require__(69);
+var task9 = __webpack_require__(93);
 var routes = [{ path: '/football',
     component: task1
+}, { path: '/reliance',
+    component: task9
 }, { path: '/example',
     component: task
 }, {
@@ -52463,6 +52466,36 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-5d3f4758", module.exports)
   }
 }
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var normalizeComponent = __webpack_require__(3)
+/* script */
+var __vue_script__ = null
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\reliancecomponent\\taskcomponent.vue"
+
+module.exports = Component.exports
+
 
 /***/ })
 /******/ ]);

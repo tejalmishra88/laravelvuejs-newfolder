@@ -21,9 +21,13 @@ Vue.use(VueRouter)
 const sample= require('./components/samplecomponent.vue');
 const task= require('./components/taskcomponent.vue');
 const task1= require('./components/footballcomponent/taskcomponent.vue');
+const task9= require('./components/reliancecomponent/taskcomponent.vue');
 const routes = [
     { path : '/football',
     component: task1,
+    },
+    { path : '/reliance',
+    component: task9,
     },
     { path : '/example',
     component: task,
