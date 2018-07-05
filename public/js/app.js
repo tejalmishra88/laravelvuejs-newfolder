@@ -51581,7 +51581,7 @@ Vue.component('addtask', __webpack_require__(73));
 
       var reply = confirm("Are You sure, you want to delete this record ?");
       if (reply) {
-        axios.post('http://127.0.0.1:8000/tasks5/', { x: id }).then(function (response) {
+        axios.post('http://127.0.0.1:8000/tasks3/', { x: id }).then(function (response) {
           console.log('taskcomponent.vue--delrecord response=', response.data);
 
           _this.tasks = response.data;
