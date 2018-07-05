@@ -16,6 +16,8 @@ class CreateProject1sTable extends Migration
         Schema::create('project1s', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->string('name');
+            $table->string('age');
         });
     }
 
