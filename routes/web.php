@@ -22,3 +22,5 @@ Route::post('getrecordbyidapi', 'todocontroller@getrecordbyid');
 Route::get('tasks1', 'ballcontroller@getnames');
 Route::post('tasks2', 'ballcontroller@savenames');
 Route::post('tasks3', 'ballcontroller@delete');
+Route::post('editapi1', 'ballcontroller@edit');
+Route::post('getrecordbyidapi2', 'ballcontroller@getrecordbyid');

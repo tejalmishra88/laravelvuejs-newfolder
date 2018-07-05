@@ -22,4 +22,12 @@ class BallController extends Controller
     {  $y=$request->input('x');
        return ball::where('id','=',$y)->get();
     }
+    public function edit(Request $request)  
+    {   
+      $id=$request->input('x'); 
+        $record =  todo::findOrFail($id); 
+         $record->name = $request->input('y');
+        $record->save();  
+        return todo::all();
+    }
 }
