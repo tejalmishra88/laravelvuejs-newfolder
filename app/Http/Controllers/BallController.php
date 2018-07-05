@@ -13,4 +13,9 @@ class BallController extends Controller
     {   $todo3 = ball::create($request->all());
         if($todo3) { return ball::all();   }
     }
+    public function delete(Request $request)  //delete
+    {  $y=$request->input('x');
+       $task1= ball::where('id','=',$y)->delete();
+       if($task1)    { return ball::all();   }
+    }
 }
