@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ball extends Model
+class project1 extends Model
 {
     //
     protected $fillable=['name'];
-    
 }
