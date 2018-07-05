@@ -52149,7 +52149,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log('edit modal--t from taskcomponent-this.rec', this.rec);
       console.log('edit-id', this.rec.id);
       console.log('edit-name', this.rec.name);
-      axios.post('http://127.0.0.1:8000/editapi/', { 'x': this.rec.id, 'y': this.rec.name }).then(function (response) {
+      axios.post('http://127.0.0.1:8000/editapi1/', { 'x': this.rec.id, 'y': this.rec.name }).then(function (response) {
         console.log('editmodal.vue--updaterec--response.data=', response.data);
 
         _this.$emit('recordUpdated', response.data);

@@ -25,9 +25,9 @@ class BallController extends Controller
     public function edit(Request $request)  
     {   
       $id=$request->input('x'); 
-        $record =  todo::findOrFail($id); 
+        $record =  ball::findOrFail($id); 
          $record->name = $request->input('y');
         $record->save();  
-        return todo::all();
+        return ball::all();
     }
 }
