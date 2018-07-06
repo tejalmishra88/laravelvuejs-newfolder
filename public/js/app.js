@@ -52471,17 +52471,22 @@ if (false) {
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(94)
+}
 var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(96)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(97)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = null
+var __vue_scopeId__ = "data-v-2445175a"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
@@ -52494,8 +52499,283 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources\\assets\\js\\components\\reliancecomponent\\taskcomponent.vue"
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2445175a", Component.options)
+  } else {
+    hotAPI.reload("data-v-2445175a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
 module.exports = Component.exports
 
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(95);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(2)("1f7c11a8", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2445175a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./taskcomponent.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-2445175a\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./taskcomponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(1)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\nh2[data-v-2445175a]{ color:green;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//Vue.component('addtask', require('./addmodalcomponent.vue'));
+//Vue.component('edittask', require('./editmodalcomponent.vue'));
+//Vue.component('viewtask', require('./viewmodalcomponent.vue'));
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return { tasks: {}, records: {},
+      editRec: {}, errors: [],
+      search: ''
+    };
+  },
+
+  methods: {
+    refreshRecord: function refreshRecord(datafromadd) {
+      console.log('taskcomponent--refrerecord=', datafromadd);
+      this.tasks = datafromadd;
+    },
+    delRecord: function delRecord(id) {
+      var _this = this;
+
+      var reply = confirm("Are You sure, you want to delete this record ?");
+      if (reply) {
+        axios.post('http://127.0.0.1:8000/tasks5/', { x: id }).then(function (response) {
+          console.log('taskcomponent.vue--delrecord response=', response.data);
+
+          _this.tasks = response.data;
+        }).catch(function (error) {
+          return _this.errors = error.response.data.errors;
+        });
+      }
+    },
+    getrecordbyid: function getrecordbyid(t) {
+      console.log('edit clicked in taskcompoenent, t=', t);
+      this.editRec = t;
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    axios.get('http://127.0.0.1:8000/sim').then(function (response) {
+      _this2.tasks = response.data;
+      console.log('/taskcomponent.vue--response-created', response);
+    }).catch(function (error) {
+      return console.log(error);
+    });
+    console.log('task Component created.');
+  }
+});
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-8" }, [
+        _c("div", { staticClass: "card" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _vm._v("\n                   worker list")
+          ]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "list-group" },
+            _vm._l(_vm.tasks, function(t) {
+              return _c("li", { staticClass: "list-group-item" }, [
+                _vm._v(
+                  _vm._s(t.id) +
+                    " - " +
+                    _vm._s(t.name) +
+                    " - " +
+                    _vm._s(t.age) +
+                    "\n                            "
+                ),
+                _c("span", { staticClass: "pull-right" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-success",
+                      attrs: { "data-toggle": "modal", href: "#editmodal" },
+                      on: {
+                        click: function($event) {
+                          _vm.getrecordbyid(t)
+                        }
+                      }
+                    },
+                    [_vm._v("edit")]
+                  ),
+                  _vm._v(" | \n                            "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      on: {
+                        click: function($event) {
+                          _vm.delRecord(t.id)
+                        }
+                      }
+                    },
+                    [_vm._v("delete")]
+                  ),
+                  _vm._v(" | \n                            "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-danger",
+                      attrs: { "data-toggle": "modal", href: "#viewmodal" },
+                      on: {
+                        click: function($event) {
+                          _vm.getRecord(t.id)
+                        }
+                      }
+                    },
+                    [_vm._v("preview")]
+                  )
+                ])
+              ])
+            })
+          ),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { attrs: { id: "modal" } },
+      [
+        _c("addtask", { on: { recordadded: _vm.refreshRecord } }),
+        _vm._v(" "),
+        _c("edittask", {
+          attrs: { rec: _vm.editRec },
+          on: { recordUpdated: _vm.refreshRecord }
+        }),
+        _vm._v(" "),
+        _c("viewtask", { attrs: { viewRec: _vm.editRec } })
+      ],
+      1
+    )
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("h4", [_vm._v("all todo task")]),
+      _c("span", { staticClass: "pull-right" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-success btn-xs",
+            attrs: { "data-toggle": "modal", href: "#addmodal" }
+          },
+          [_vm._v("+")]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-footer text-right" }, [
+      _c("small", [_vm._v("company xyz")])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2445175a", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
