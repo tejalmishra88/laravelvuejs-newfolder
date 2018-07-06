@@ -27,7 +27,7 @@
 </template>
 
 <script type="text/javascript">
-//Vue.component('addtask', require('./addmodalcomponent.vue'));
+Vue.component('addtask', require('./addmodalcomponent.vue'));
 //Vue.component('edittask', require('./editmodalcomponent.vue'));
 //Vue.component('viewtask', require('./viewmodalcomponent.vue'));
     export default 

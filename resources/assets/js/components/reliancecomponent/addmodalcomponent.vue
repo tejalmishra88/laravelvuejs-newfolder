@@ -11,6 +11,7 @@
                         <p class="alert alert-success" v-if="success.length > 0">{{ success}}</p>
                         <label for="name">add new task</label>
                         <textarea name="name" id="name" class="form-control" v-model="record"></textarea>
+                        <textarea name="age" id="age" class="form-control" v-model="age"></textarea>
                         <ul v-if="errors.name" class="list-unstyled">
                             <li v-for="err of errors.name" class="alert alert-danger">{{ err }}</li>
                         </ul>
@@ -27,15 +28,16 @@
 <script type="text/javascript">
 export default
   { data() 
-        {  return  {    success: '',  errors: [],  record: '',    }
+        {  return  {    success: '',  errors: [],  record: '', age:'',   }
          },
         methods:
          {      addRecord() 
                     {     console.log('this.record=', this.record);
-                           axios.post("http://127.0.0.1:8000/tasks4",   { 'name': this.record,}                                        
+                           axios.post("http://127.0.0.1:8000/sim2",   { 'name': this.record, 'age': this.age,}  
+                                                                 
                      
                         )
-                        .then(response=> {  
+                        .then(response=> { 
                              console.log('addmodalcomponent-response=',response);
                         console.log('addmodalcomponent-response.data=',response.data);
                             this.$emit('recordadded', response.data);
