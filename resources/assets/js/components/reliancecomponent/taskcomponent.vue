@@ -3,18 +3,18 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h4>all todo task</h4><span class="pull-right">
+                    <div class="card-header"><h6>all todo task</h6><span class="pull-right">
                         <a class="btn btn-success btn-xs" data-toggle="modal" href="#addmodal">+</a>
                     </span></div>
                      <div class="card-body">
-                       worker list</div>
+                       assignment for holiday</div>
                      <ul class="list-group">
                             <li class="list-group-item"  v-for= "t in tasks">{{ t.id }} - {{ t.name }} - {{t.age}}
-                                <span class="pull-right"><a data-toggle="modal" href="#editmodal" class="btn btn-success" @click="getrecordbyid(t)">edit</a> | 
-                                <button @click="delRecord(t.id)" class="btn btn-primary">delete</button> | 
+                                <span class="pull-right"><a data-toggle="modal" href="#editmodal" class="btn btn-primary" @click="getrecordbyid(t)">edit</a> | 
+                                <button @click="delRecord(t.id)" class="btn btn-success">delete</button> | 
                                 <a class="btn btn-danger" data-toggle="modal" href="#viewmodal" @click="getRecord(t.id)">preview</a></span> </li>
                         </ul>
-                    <div class="card-footer text-right"><small>company xyz</small></div>
+                    <div class="card-footer text-right"><small>reliance infra@tejal</small></div>
                 </div>
             </div>
         </div>
