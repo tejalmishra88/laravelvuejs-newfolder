@@ -22,8 +22,20 @@ class Project1Controller extends Controller
     }
     public function delete(Request $request)  //delete
     {  $y=$request->input('x');
-       $task1= todo::where('id','=',$y)->delete();
-       if($task1)    { return todo::all();   
+       $task1= project1::where('id','=',$y)->delete();
+       if($task1)    { return project1::all();   
     }
 
+    }public function getrecordbyid(Request $request)  
+    {  $y=$request->input('x');
+   return project1::where('id','=',$y)->get();
+    }
+        public function edit(Request $request)  
+        {   
+             $id=$request->input('x'); 
+             $record =  project1::findOrFail($id); 
+              $record->name = $request->input('y');
+                 $record->save();  
+                 return project1::all();
+        }   
 }
