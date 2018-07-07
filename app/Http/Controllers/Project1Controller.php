@@ -23,6 +23,7 @@ class Project1Controller extends Controller
     public function delete(Request $request)  //delete
     {  $y=$request->input('x');
        $task1= todo::where('id','=',$y)->delete();
-       if($task1)    { return todo::all();   }
+       if($task1)    { return todo::all();   
     }
+
 }
