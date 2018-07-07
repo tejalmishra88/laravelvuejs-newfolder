@@ -53148,7 +53148,7 @@ exports = module.exports = __webpack_require__(1)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53159,6 +53159,7 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
 //
 //
 //
@@ -53199,7 +53200,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log('edit modal--t from taskcomponent-this.rec', this.rec);
       console.log('edit-id', this.rec.id);
       console.log('edit-name', this.rec.name);
-      axios.post('http://127.0.0.1:8000/editapi/', { 'x': this.rec.id, 'y': this.rec.name }).then(function (response) {
+      console.log('edit-age', this.rec.age);
+      axios.post('http://127.0.0.1:8000/editapi2/', { 'x': this.rec.id, 'y': this.rec.name, 'z': this.rec.age }).then(function (response) {
         console.log('editmodal.vue--updaterec--response.data=', response.data);
 
         _this.$emit('recordUpdated', response.data);
@@ -53272,6 +53274,28 @@ var render = function() {
                   return
                 }
                 _vm.$set(_vm.rec, "name", $event.target.value)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.rec.age,
+                expression: "rec.age"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { name: "age", id: "age" },
+            domProps: { value: _vm.rec.age },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.$set(_vm.rec, "age", $event.target.value)
               }
             }
           }),

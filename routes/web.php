@@ -27,3 +27,5 @@ Route::post('getrecordbyidapi2', 'ballcontroller@getrecordbyid');
 Route::get('sim', 'project1controller@getnames');
 Route::post('sim2', 'project1controller@savenames');
 Route::post('sim3', 'project1controller@delete');
+Route::post('editapi2', 'project1controller@edit');
+Route::post('getrecordbyidapi3', 'project1controller@getrecordbyid');

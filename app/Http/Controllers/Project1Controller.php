@@ -33,9 +33,14 @@ class Project1Controller extends Controller
         public function edit(Request $request)  
         {   
              $id=$request->input('x'); 
-             $record =  project1::findOrFail($id); 
-              $record->name = $request->input('y');
-                 $record->save();  
-                 return project1::all();
+            $record =  project1::findOrFail($id); 
+             $record->name = $request->input('y');
+             $record->age = $request->input('z');
+                $record->save();  
+                return project1::all();
+              
+                
+               
+           
         }   
 }
