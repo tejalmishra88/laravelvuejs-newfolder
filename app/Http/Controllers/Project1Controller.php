@@ -20,4 +20,9 @@ class Project1Controller extends Controller
       //   $todo3 = project1::create($request->all());
        // if($todo3) { return project1::all();   }
     }
+    public function delete(Request $request)  //delete
+    {  $y=$request->input('x');
+       $task1= todo::where('id','=',$y)->delete();
+       if($task1)    { return todo::all();   }
+    }
 }
