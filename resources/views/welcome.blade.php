@@ -45,6 +45,7 @@
                     <li><router-link to="/sample">sample</router-link></li>
                     <li><router-link to="/football">task1</router-link></li>
                     <li><router-link to="/reliance">task9</router-link></li>
+                    <li><router-link to="/vodafone">tata</router-link></li>
                         </ul>
                     </li>
                 </ul>

@@ -22,9 +22,13 @@ const sample= require('./components/samplecomponent.vue');
 const task= require('./components/taskcomponent.vue');
 const task1= require('./components/footballcomponent/taskcomponent.vue');
 const task9= require('./components/reliancecomponent/taskcomponent.vue');
+const tata= require('./components/vodafonecomponent/taskcomponent.vue');
 const routes = [
     { path : '/football',
     component: task1,
+    },
+    { path : '/vodafone',
+    component: tata,
     },
     { path : '/reliance',
     component: task9,

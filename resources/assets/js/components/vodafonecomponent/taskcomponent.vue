@@ -60,7 +60,7 @@ Vue.component('viewtask', require('./viewmodalcomponent.vue'));
                 }
            },
         created() 
-           {     axios.get('http://127.0.0.1:8000/tasks')
+           {     axios.get('http://127.0.0.1:8000/jio1')
                      .then((response) => {this.tasks = response.data;
                                           console.log('/taskcomponent.vue--response-created', response);
                                          }
