@@ -53811,7 +53811,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53848,10 +53848,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return { success: '', errors: [], record: '' };
+    return { success: '', errors: [], record: '', age: '', height: '' };
   },
 
   methods: {
@@ -53859,7 +53861,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       var _this = this;
 
       console.log('this.record=', this.record);
-      axios.post("http://127.0.0.1:8000/tasks4", { 'name': this.record }).then(function (response) {
+      axios.post("http://127.0.0.1:8000/jio2", { 'name': this.record, 'age': this.age, 'height': this.height }).then(function (response) {
         console.log('addmodalcomponent-response=', response);
         console.log('addmodalcomponent-response.data=', response.data);
         _this.$emit('recordadded', response.data);
@@ -53934,6 +53936,50 @@ var render = function() {
                   return
                 }
                 _vm.record = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.age,
+                expression: "age"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { name: "age", id: "age" },
+            domProps: { value: _vm.age },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.age = $event.target.value
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.height,
+                expression: "height"
+              }
+            ],
+            staticClass: "form-control",
+            attrs: { name: "height", id: "height" },
+            domProps: { value: _vm.height },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.height = $event.target.value
               }
             }
           }),
@@ -54464,13 +54510,16 @@ var render = function() {
             _vm._l(_vm.tasks, function(t) {
               return _c("li", { staticClass: "list-group-item" }, [
                 _c("th", [_vm._v("id")]),
-                _vm._v(_vm._s(t.id) + " - "),
-                _c("th", [_vm._v("name")]),
-                _vm._v(_vm._s(t.name) + "\n                         - "),
-                _c("th", [_vm._v("age")]),
-                _vm._v(_vm._s(t.age) + " - "),
-                _c("th", [_vm._v("height")]),
-                _vm._v(_vm._s(t.height) + "\n                            "),
+                _vm._v(
+                  _vm._s(t.id) +
+                    " - " +
+                    _vm._s(t.name) +
+                    "\n                         - " +
+                    _vm._s(t.age) +
+                    " - " +
+                    _vm._s(t.height) +
+                    "\n                            "
+                ),
                 _c("br"),
                 _c("span", { staticClass: "pull-right" }, [
                   _c(
@@ -54566,8 +54615,6 @@ var staticRenderFns = [
     return _c("table", [
       _c("thead", [
         _c("tr", [
-          _c("th", [_vm._v("id")]),
-          _vm._v("|"),
           _c("th", [_vm._v("name")]),
           _vm._v("|"),
           _c("th", [_vm._v("age")]),

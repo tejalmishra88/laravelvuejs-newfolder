@@ -10,14 +10,14 @@
                        worker list</div>
                        <table><thead>
                        <tr>
-                           <th>id</th>|<th>name</th>|<th>age</th>|<th>height</th>
+                           <th>name</th>|<th>age</th>|<th>height</th>
                           </tr></thead>
                           <tbody>
                               </tbody>
                           </table>
                      <ul class="list-group">
-                            <li class="list-group-item"  v-for= "t in tasks"><th>id</th>{{ t.id }} - <th>name</th>{{ t.name }}
-                             - <th>age</th>{{t.age}} - <th>height</th>{{t.height}}
+                            <li class="list-group-item"  v-for= "t in tasks"><th>id</th>{{ t.id }} - {{ t.name }}
+                             - {{t.age}} - {{t.height}}
                                 <br><span class="pull-right"><a data-toggle="modal" href="#editmodal" class="btn btn-success" @click="getrecordbyid(t)">edit</a> | 
                                 <button @click="delRecord(t.id)" class="btn btn-primary">delete</button> | 
                                 <a class="btn btn-danger" data-toggle="modal" href="#viewmodal" @click="getRecord(t.id)">preview</a></span> </li>
