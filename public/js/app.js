@@ -53666,6 +53666,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 Vue.component('addtask', __webpack_require__(117));
 Vue.component('edittask', __webpack_require__(122));
@@ -54446,17 +54456,22 @@ var render = function() {
             _vm._v("\n                   worker list")
           ]),
           _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
           _c(
             "ul",
             { staticClass: "list-group" },
             _vm._l(_vm.tasks, function(t) {
               return _c("li", { staticClass: "list-group-item" }, [
-                _vm._v(
-                  _vm._s(t.id) +
-                    " - " +
-                    _vm._s(t.name) +
-                    " \n                            "
-                ),
+                _c("th", [_vm._v("id")]),
+                _vm._v(_vm._s(t.id) + " - "),
+                _c("th", [_vm._v("name")]),
+                _vm._v(_vm._s(t.name) + "\n                         - "),
+                _c("th", [_vm._v("age")]),
+                _vm._v(_vm._s(t.age) + " - "),
+                _c("th", [_vm._v("height")]),
+                _vm._v(_vm._s(t.height) + "\n                            "),
+                _c("br"),
                 _c("span", { staticClass: "pull-right" }, [
                   _c(
                     "a",
@@ -54503,7 +54518,7 @@ var render = function() {
             })
           ),
           _vm._v(" "),
-          _vm._m(1)
+          _vm._m(2)
         ])
       ])
     ]),
@@ -54542,6 +54557,26 @@ var staticRenderFns = [
           [_vm._v("+")]
         )
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("table", [
+      _c("thead", [
+        _c("tr", [
+          _c("th", [_vm._v("id")]),
+          _vm._v("|"),
+          _c("th", [_vm._v("name")]),
+          _vm._v("|"),
+          _c("th", [_vm._v("age")]),
+          _vm._v("|"),
+          _c("th", [_vm._v("height")])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("tbody")
     ])
   },
   function() {
