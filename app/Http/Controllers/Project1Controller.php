@@ -10,8 +10,7 @@ class Project1Controller extends Controller
     public function getnames()   
     {  return project1::all();   } //get
     public function savenames(Request $request)             //add
-    { // return $request;
-        
+    { 
        $project1= new project1();
        $project1->name=$request->name;
        $project1->age=$request->age;
@@ -25,8 +24,8 @@ class Project1Controller extends Controller
        $task1= project1::where('id','=',$y)->delete();
        if($task1)    { return project1::all();   
     }
-
-    }public function getrecordbyid(Request $request)  
+     }
+    public function getrecordbyid(Request $request)  
     {  $y=$request->input('x');
    return project1::where('id','=',$y)->get();
     }

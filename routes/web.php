@@ -31,3 +31,4 @@ Route::post('editapi2', 'project1controller@edit');
 Route::post('getrecordbyidapi3', 'project1controller@getrecordbyid');
 Route::get('jio1', 'docomocontroller@getnames');
 Route::post('jio2', 'docomocontroller@savenames');
+Route::post('jio3', 'docomocontroller@delete');
