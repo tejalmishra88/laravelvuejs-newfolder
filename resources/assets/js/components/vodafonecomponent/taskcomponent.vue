@@ -55,7 +55,7 @@ Vue.component('viewtask', require('./viewmodalcomponent.vue'));
                delRecord(id) 
                 {  const reply = confirm("Are You sure, you want to delete this record ?");
                    if(reply)
-                   {   axios.post('http://127.0.0.1:8000/tasks5/',{x:id})
+                   {   axios.post('http://127.0.0.1:8000/jio3/',{x:id})
                             .then(( response) => {console.log('taskcomponent.vue--delrecord response=',response.data)
                                                  
                                                    this.tasks = response.data;
