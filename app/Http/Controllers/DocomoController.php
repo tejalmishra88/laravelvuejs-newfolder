@@ -27,4 +27,22 @@ class DocomoController extends Controller
        if($task1)    { return docomo::all();   
     }
      }
+     public function getrecordbyid(Request $request)  
+    {  $y=$request->input('x');
+   return docomo::where('id','=',$y)->get();
+    }
+        public function edit(Request $request)  
+        {   
+             $id=$request->input('x'); 
+            $record =  docomo::findOrFail($id); 
+             $record->name = $request->input('y');
+             $record->age = $request->input('z');
+             $record->height = $request->input('a');
+                $record->save();  
+                return docomo::all();
+              
+                
+               
+           
+        }   
 }
